@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-    public GameObject bulletPrefab;
+    public Rigidbody2D bulletPrefab;
     // Start is called before the first frame update
     public float bulletSpeed = 10f;
     void Start()
@@ -16,12 +16,10 @@ public class PlayerShooting : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            Rigidbody2D bulletRB = GetComponent<Rigidbody2D>();
-            if(bulletRB != null )
-            {
-                bulletRB.velocity = transform.up * bulletSpeed;
-            }
+            Rigidbody2D bulletRB = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            bulletRB.velocity = transform.up * bulletSpeed;
+            Destroy(bulletRB.gameObject, 2.0f);
+            
         }
     }
 }
