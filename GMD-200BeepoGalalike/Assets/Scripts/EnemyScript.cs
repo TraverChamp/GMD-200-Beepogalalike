@@ -4,15 +4,37 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject circlePrefab;
+    [SerializeField] private float respawnY = 10f;
+    private float respawnX;
+    private Rigidbody2D _rigidbody2d;
+
+    private void Awake()
     {
-        
+        _rigidbody2d = GetComponent<Rigidbody2D>();
+    }
+    private void Start()
+    {
+        respawnX = transform.position.x;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Respawn()
     {
-        
+        gameObject.SetActive(true);
+        transform.position = new Vector2(respawnX, respawnY);
+        _rigidbody2d.velocity = Vector2.zero;
+
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Laser"))
+        {
+            Despawn();
+        }
+    }
+    private void Despawn()
+    {
+        gameObject.SetActive(false);
+        Instantiate(circlePrefab, transform.position, transform.rotation);
     }
 }
