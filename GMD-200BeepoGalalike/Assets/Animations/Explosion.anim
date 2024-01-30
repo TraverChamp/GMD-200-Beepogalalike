@@ -488,7 +488,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.98333335
-    functionName: circleprocess
+    functionName: remove
     data: 
     objectReferenceParameter: {fileID: 4086473329478988199, guid: 636b38a6dd978514581b335d717e7322, type: 3}
     floatParameter: 0

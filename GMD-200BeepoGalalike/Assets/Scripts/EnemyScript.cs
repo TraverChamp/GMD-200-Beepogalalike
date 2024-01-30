@@ -34,6 +34,7 @@ public class EnemyScript : MonoBehaviour
     }
     private void Despawn()
     {
+        
         gameObject.SetActive(false);
         Instantiate(circlePrefab, transform.position, transform.rotation);
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class circleprocess : MonoBehaviour
 {
-    public void OnDestroy()
+    public void remove()
     {
         Destroy(gameObject);
     }
