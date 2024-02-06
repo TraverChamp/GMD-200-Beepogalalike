@@ -8,10 +8,11 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private float respawnY = 10f;
     private float respawnX;
     private Rigidbody2D _rigidbody2d;
-
+    public float vertical = -10f, horizontal;
     private void Awake()
     {
         _rigidbody2d = GetComponent<Rigidbody2D>();
+        _rigidbody2d.velocity = new Vector2(horizontal, vertical);
     }
     private void Start()
     {
@@ -37,5 +38,6 @@ public class EnemyScript : MonoBehaviour
         
         gameObject.SetActive(false);
         Instantiate(circlePrefab, transform.position, transform.rotation);
+        ScoreManager.instance.Addpoint();
     }
 }

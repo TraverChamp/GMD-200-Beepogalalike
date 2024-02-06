@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7712756974781128699}
   - component: {fileID: -2075394501705040017}
   - component: {fileID: -2567966034470382964}
+  - component: {fileID: -5919339733959441657}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Laser
@@ -148,7 +149,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.49999997
+  m_Radius: 1
 --- !u!82 &-2567966034470382964
 AudioSource:
   m_ObjectHideFlags: 0
@@ -159,7 +160,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a0ed1dce7dc42e943b0925bf5a50ad9e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -245,3 +246,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-5919339733959441657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439239602600047964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf49d03525853c74b86ead76e9e1d1b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
